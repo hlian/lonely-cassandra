@@ -14,6 +14,6 @@ RUN echo "JVM_OPTS=\"\$JVM_OPTS -Dcassandra.skip_wait_for_gossip_to_settle=0\"" 
 
 RUN cat "$CONFIG"
 
-EXPOSE 9042
-
+EXPOSE 7000 7001 7199 9042 9160
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/docker-entrypoint.sh", "cassandra", "-f"]
